@@ -4,13 +4,11 @@
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end """
 
-import json
-
-import requests
+import requests, json
 from connectors.core.connector import get_logger, ConnectorError
 from requests import exceptions as req_exceptions
 
-logger = get_logger('threatbook')
+logger = get_logger('rapid7-insightcloudsec')
 
 
 class Rapid7InsightCloudSec(object):
@@ -117,3 +115,4 @@ operations = {
     'run_resource_query': run_resource_query,
     'get_list_resource_tags': get_list_resource_tags
 }
+
