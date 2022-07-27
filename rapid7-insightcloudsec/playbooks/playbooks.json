@@ -1,0 +1,320 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Rapid7 InsightCloudSec - 1.0.0",
+      "description": "Sample playbooks for \"Rapid7 InsightCloudSec\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "data:png;base64,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",
+      "uuid": "0091a5eb-aa7c-45dd-ae5d-8f954c35ff92",
+      "id": 196,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "Rapid7",
+        "rapid7-insightcloudsec"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Resource Details",
+          "aliasName": null,
+          "tag": "#Rapid7 InsightCloudSec",
+          "description": "Get all of the details about a resource including its dependencies based on specified ID of resource.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1658745215,
+          "collection": "/api/3/workflow_collections/0091a5eb-aa7c-45dd-ae5d-8f954c35ff92",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/0b427e48-3325-4781-8d64-cda166ad3c53",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "753e2365-06a5-4d08-9489-15573e152e19",
+                "title": "Rapid7 InsightCloudSec: Get Resource Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "0b427e48-3325-4781-8d64-cda166ad3c53"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Resource Details",
+              "description": null,
+              "arguments": {
+                "name": "Rapid7 InsightCloudSec",
+                "config": "abc93cb2-2cc9-462a-a672-e38b938b5168",
+                "params": {
+                  "resource_id": "dbinstance:112:us-east-1:example-database-id:"
+                },
+                "version": "1.0.0",
+                "connector": "rapid7-insightcloudsec",
+                "operation": "get_resource_details",
+                "operationTitle": "Get Resource Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "180",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "930a1f98-02c5-4355-b826-e15e1b55b8e6"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Resource Details",
+              "targetStep": "/api/3/workflow_steps/930a1f98-02c5-4355-b826-e15e1b55b8e6",
+              "sourceStep": "/api/3/workflow_steps/0b427e48-3325-4781-8d64-cda166ad3c53",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "7b45371d-7b87-451e-a20f-77f8d21fedc0"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "0ec04262-6aee-404a-9bc9-663b58435610",
+          "id": 1847,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Rapid7",
+            "rapid7-insightcloudsec"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Resource Tags List",
+          "aliasName": null,
+          "tag": "#Rapid7 InsightCloudSec",
+          "description": "Retrieves list of tags for a given id of the resource.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1658745202,
+          "collection": "/api/3/workflow_collections/0091a5eb-aa7c-45dd-ae5d-8f954c35ff92",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/65460cbd-b8fd-47da-8566-5e5de2075342",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Resource Tags List",
+              "description": null,
+              "arguments": {
+                "name": "Rapid7 InsightCloudSec",
+                "config": "abc93cb2-2cc9-462a-a672-e38b938b5168",
+                "params": {
+                  "resource_id": "dbinstance:112:us-east-1:example-database-id:"
+                },
+                "version": "1.0.0",
+                "connector": "rapid7-insightcloudsec",
+                "operation": "get_list_resource_tags",
+                "operationTitle": "Get Resource Tags List",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "106061c0-2f49-4189-889e-5845d8d24c8f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "f12c1182-50b8-4a07-840e-c80948786246",
+                "title": "Rapid7 InsightCloudSec: Get Resource Tags List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "65460cbd-b8fd-47da-8566-5e5de2075342"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Resource Tags List",
+              "targetStep": "/api/3/workflow_steps/106061c0-2f49-4189-889e-5845d8d24c8f",
+              "sourceStep": "/api/3/workflow_steps/65460cbd-b8fd-47da-8566-5e5de2075342",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "af3b23f8-6202-4342-a526-3f4824d470aa"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "1e5f9195-50b8-46cb-9439-eb44bcde4af0",
+          "id": 1849,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Rapid7",
+            "rapid7-insightcloudsec"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Run Resource Query",
+          "aliasName": null,
+          "tag": "#Rapid7 InsightCloudSec",
+          "description": "Execute query and get resources details.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1658747008,
+          "collection": "/api/3/workflow_collections/0091a5eb-aa7c-45dd-ae5d-8f954c35ff92",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/28a4676d-50c4-434b-bf94-8dcf1fc596ab",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "21c2fb65-5ad7-4767-ae81-548e9923e3c5",
+                "title": "Rapid7 InsightCloudSec: Run Resource Query",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "28a4676d-50c4-434b-bf94-8dcf1fc596ab"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Run Resource Query",
+              "description": null,
+              "arguments": {
+                "name": "Rapid7 InsightCloudSec",
+                "config": "abc93cb2-2cc9-462a-a672-e38b938b5168",
+                "params": {
+                  "tags": "",
+                  "limit": 1000,
+                  "badges": " [\n            {\n              \"key\": \"specify the badge key name.\",\n              \"value\": \"specify the badge value.\"\n            }\n          ]",
+                  "offset": "",
+                  "scopes": "",
+                  "filters": "[\n  {\n    \"name\": \"The name of the filter.\",\n    \"config\": \"The configuration for the filter\"\n  }\n]",
+                  "insight": "pack-type:insight-id",
+                  "order_by": "",
+                  "badge_filter_operator": "",
+                  "selected_resource_type": ""
+                },
+                "version": "1.0.0",
+                "connector": "rapid7-insightcloudsec",
+                "operation": "run_resource_query",
+                "operationTitle": "Run Resource Query",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "4a2d4fa8-24c8-4334-a4fd-f0c77737d1a6"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Run Resource Query",
+              "targetStep": "/api/3/workflow_steps/4a2d4fa8-24c8-4334-a4fd-f0c77737d1a6",
+              "sourceStep": "/api/3/workflow_steps/28a4676d-50c4-434b-bf94-8dcf1fc596ab",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "d0000f48-229b-4d43-9487-63bc21688932"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "7007dca2-3504-4926-b2ca-7df4ee91670b",
+          "id": 1848,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Rapid7",
+            "rapid7-insightcloudsec"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Rapid7",
+    "rapid7-insightcloudsec"
+  ]
+}

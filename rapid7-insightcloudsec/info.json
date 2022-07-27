@@ -1,0 +1,398 @@
+{
+  "name": "rapid7-insightcloudsec",
+  "label": "Rapid7 InsightCloudSec",
+  "description": "InsightCloudSec secures your public cloud environment from development to production with a modern, integrated, and automated approach. This connector facilitates automated operation such as retrieving resource related information.",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Cloud Security",
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "type": "text",
+        "description": "Specify the Rapid7 InsightCloudSec server URL for this connector to connect and perform automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "API Key",
+        "name": "api_key",
+        "type": "password",
+        "description": "Specify an API Key for this connector to access the Rapid7 InsightCloudSec endpoint.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Select the checkbox to verify the server's SSL certificate. By default, this option is set as True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_resource_details",
+      "title": "Get Resource Details",
+      "category": "investigation",
+      "annotation": "get_resource_details",
+      "description": "Get all of the details about a resource including its dependencies based on specified ID of resource.",
+      "parameters": [
+        {
+          "title": "Resource ID",
+          "name": "resource_id",
+          "type": "text",
+          "description": "Specify the InsightCloudSec resource ID.",
+          "tooltip": "Specify the InsightCloudSec resource ID.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": {
+        "dependencies": {
+          "privatenetwork": [
+            {
+              "id": "",
+              "name": "",
+              "resource_id": "",
+              "type": ""
+            }
+          ],
+          "privatesubnet": [
+            {
+              "id": "",
+              "name": "",
+              "resource_id": "",
+              "type": ""
+            }
+          ],
+          "serviceencryptionkey": [
+            {
+              "id": "",
+              "name": "",
+              "resource_id": "",
+              "type": ""
+            }
+          ]
+        },
+        "details": {
+          "dbinstance": {
+            "backup_retention": "",
+            "ca_cert": "",
+            "common": {
+              "account": "",
+              "account_id": "",
+              "account_status": "",
+              "cloud": "",
+              "creation_timestamp": "",
+              "direct_link": "",
+              "discovered_timestamp": "",
+              "modified_timestamp": "",
+              "namespace_id": "",
+              "noncompliance": [],
+              "organization_service_id": "",
+              "properties": {
+                "property_list": []
+              },
+              "region": "",
+              "resource_id": "",
+              "resource_name": "",
+              "resource_type": "",
+              "tags": {
+                "Name": ""
+              }
+            },
+            "copy_tags_to_snapshot": "",
+            "db_name": "divvy",
+            "deletion_protection": "",
+            "enabled_logging_types": "",
+            "encrypted": "",
+            "endpoint_address": "",
+            "endpoint_port": "",
+            "engine": "",
+            "engine_version": "",
+            "enhanced_monitoring": "",
+            "iam_authentication": "",
+            "instance_id": "",
+            "instance_type": "",
+            "latest_restorable_time": "",
+            "master_username": "",
+            "multi_az": "",
+            "network_resource_id": "",
+            "option_groups": "",
+            "parameter_groups": "",
+            "publicly_accessible": "",
+            "state": "",
+            "storage_size": "",
+            "storage_type": ""
+          },
+          "metric_enabled": "",
+          "resource_type": ""
+        }
+      }
+    },
+    {
+      "operation": "run_resource_query",
+      "title": "Run Resource Query",
+      "category": "investigation",
+      "annotation": "run_resource_query",
+      "description": "Execute query and get resources details.",
+      "parameters": [
+        {
+          "title": "Badges",
+          "name": "badges",
+          "type": "json",
+          "description": "Specify the list of key-value pairs for badges in JSON format.",
+          "tooltip": "Specify the list of key-value pairs for badges in JSON format.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": [
+            {
+              "key": "specify the badge key name.",
+              "value": "specify the badge value."
+            }
+          ]
+        },
+        {
+          "title": "Badge Filter Operator",
+          "name": "badge_filter_operator",
+          "type": "select",
+          "description": "Select the operator for evaluating multiple badges. Options are: \"OR\" or \"AND\".\nOR",
+          "tooltip": "Select the operator for evaluating multiple badges. Options are: \"OR\" or \"AND\".\nOR",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "OR",
+            "AND"
+          ]
+        },
+        {
+          "title": "Filters",
+          "name": "filters",
+          "type": "json",
+          "description": "Specify the the name and configuration for a filter in JSON format.",
+          "tooltip": "Specify the the name and configuration for a filter in JSON format.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": [
+            {
+              "name": "The name of the filter.",
+              "config": "The configuration for the filter"
+            }
+          ]
+        },
+        {
+          "title": "Insight",
+          "name": "insight",
+          "type": "text",
+          "description": "Specify a union of the Insight's pack type and ID: pack-type:insight-id",
+          "tooltip": "Specify a union of the Insight's pack type and ID: pack-type:insight-id",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Scopes",
+          "name": "scopes",
+          "type": "text",
+          "description": "Specify a CSV list of the Cloud Organization Resource ID(s) and/or Resource Group ID(s) to which to scope the query. Use the List Clouds endpoint to obtain Cloud Organization resource ID(s); use the List Resource Group Associations endpoint to obtain resource group ID(s).",
+          "tooltip": "Specify a CSV list of the Cloud Organization Resource ID(s) and/or Resource Group ID(s) to which to scope the query. Use the List Clouds endpoint to obtain Cloud Organization resource ID(s); use the List Resource Group Associations endpoint to obtain resource group ID(s).",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Selected Resource Type",
+          "name": "selected_resource_type",
+          "type": "text",
+          "description": "The resource type that will be used to populate the response object. If no type is provided, counts of all resource types (in the user's current InsightCloudSec Organization) will be returned.",
+          "tooltip": "The resource type that will be used to populate the response object. If no type is provided, counts of all resource types (in the user's current InsightCloudSec Organization) will be returned.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "text",
+          "description": "A list of tag names.",
+          "tooltip": "A list of tag names.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Order By",
+          "name": "order_by",
+          "type": "text",
+          "description": "Specify the attribute by which to sort the returned resources.",
+          "tooltip": "Specify the attribute by which to sort the returned resources.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "description": "The maximum number of resources returned if selected_resource_type is provided and resources match the provided criteria. The value can be between 1 and 1000.",
+          "tooltip": "The maximum number of resources returned if selected_resource_type is provided and resources match the provided criteria. The value can be between 1 and 1000.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Offset",
+          "name": "offset",
+          "type": "integer",
+          "description": "The number of entries to skip over before returning anything. It is highly recommended that cursor be used instead.",
+          "tooltip": "The number of entries to skip over before returning anything. It is highly recommended that cursor be used instead.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": {
+        "counts": {
+          "instance": ""
+        },
+        "selected_resource_type": "",
+        "supported_types": [
+        ],
+        "resources": [
+          {
+            "resource_type": "",
+            "instance": {
+              "common": {
+                "resource_id": "",
+                "resource_name": "",
+                "resource_type": "",
+                "cloud": "",
+                "account": "",
+                "account_id": "",
+                "account_status": "",
+                "organization_service_id": "",
+                "availability_zone": "",
+                "region": "",
+                "creation_timestamp": "",
+                "discovered_timestamp": "",
+                "modified_timestamp": "",
+                "namespace_id": "",
+                "tags": {
+                  "POC": "",
+                  "bot": "",
+                  "Name": "",
+                  "date": "",
+                  "year": "",
+                  "Alpha": "",
+                  "Email": "",
+                  "Owner": "",
+                  "Pollo": "",
+                  "Period": "",
+                  "release": "",
+                  "version": "",
+                  "TimeZone": "",
+                  "cloud_type": "",
+                  "Environment": "",
+                  "direct_link": "",
+                  "ContractType": "",
+                  "resource_type": "",
+                  "twentyfourseven": "",
+                  "AlternateContact": "",
+                  "DisasterRecovery": "",
+                  "software-version": "",
+                  "InformationSecurity": ""
+                }
+              },
+              "instance_id": "",
+              "instance_type": "",
+              "launch_time": "",
+              "platform": "",
+              "state": "",
+              "root_device_type": "",
+              "key_name": "",
+              "image_id": "",
+              "private_ip_address": "",
+              "public_ip_address": "",
+              "tenancy": "",
+              "network_resource_id": "",
+              "subnet_resource_id": "",
+              "detailed_monitoring": "",
+              "aws_instance_metadata_service_v2_required": "",
+              "aws_instance_metadata_service_hop_limit": "",
+              "aws_instance_metadata_service_endpoint_enabled": "",
+              "aws_instance_metadata_service_endpoint_config_status": "",
+              "architecture": "",
+              "state_transition_reason": ""
+            }
+          }
+        ],
+        "scopes": [],
+        "limit": "",
+        "offset": "",
+        "order_by": "",
+        "filters": [
+          {
+            "name": "",
+            "config": {}
+          }
+        ],
+        "headers": [
+          {
+            "name": "",
+            "value": [
+            ],
+            "visible": "",
+            "order_by": ""
+          }
+        ]
+      }
+    },
+    {
+      "operation": "get_list_resource_tags",
+      "title": "Get Resource Tags List",
+      "category": "investigation",
+      "annotation": "get_resource_tags_list",
+      "description": "Retrieves list of tags for a given id of the resource.",
+      "parameters": [
+        {
+          "title": "Resource ID",
+          "name": "resource_id",
+          "type": "text",
+          "description": "Specify the InsightCloudSec resource ID.",
+          "tooltip": "Specify the InsightCloudSec resource ID.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": {
+        "resource_tags": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      }
+    }
+  ]
+}
