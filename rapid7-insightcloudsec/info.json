@@ -153,6 +153,52 @@
       "description": "Execute query and get resources details.",
       "parameters": [
         {
+          "title": "Badges",
+          "name": "badges",
+          "type": "json",
+          "description": "Specify the list of key-value pairs for badges in JSON format.",
+          "tooltip": "Specify the list of key-value pairs for badges in JSON format.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": [
+            {
+              "key": "specify the badge key name.",
+              "value": "specify the badge value."
+            }
+          ]
+        },
+        {
+          "title": "Badge Filter Operator",
+          "name": "badge_filter_operator",
+          "type": "select",
+          "description": "Select the operator for evaluating multiple badges. Options are: \"OR\" or \"AND\".\nOR",
+          "tooltip": "Select the operator for evaluating multiple badges. Options are: \"OR\" or \"AND\".\nOR",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "OR",
+            "AND"
+          ]
+        },
+        {
+          "title": "Filters",
+          "name": "filters",
+          "type": "json",
+          "description": "Specify the the name and configuration for a filter in JSON format.",
+          "tooltip": "Specify the the name and configuration for a filter in JSON format.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": [
+            {
+              "name": "The name of the filter.",
+              "config": "The configuration for the filter"
+            }
+          ]
+        },
+        {
           "title": "Insight",
           "name": "insight",
           "type": "text",
@@ -221,52 +267,6 @@
           "required": false,
           "editable": true,
           "visible": true
-        },
-        {
-          "title": "Filters",
-          "name": "filters",
-          "type": "json",
-          "description": "Specify the the name and configuration for a filter in JSON format.",
-          "tooltip": "Specify the the name and configuration for a filter in JSON format.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "value": [
-            {
-              "name": "The name of the filter.",
-              "config": "The configuration for the filter"
-            }
-          ]
-        },
-        {
-          "title": "Badges",
-          "name": "badges",
-          "type": "json",
-          "description": "Specify the list of key-value pairs for badges in JSON format.",
-          "tooltip": "Specify the list of key-value pairs for badges in JSON format.",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "value": [
-            {
-              "key": "specify the badge key name.",
-              "value": "specify the badge value."
-            }
-          ]
-        },
-        {
-          "title": "Badge Filter Operator",
-          "name": "badge_filter_operator",
-          "type": "select",
-          "description": "Select the operator for evaluating multiple badges. Options are: \"OR\" or \"AND\".\nOR",
-          "tooltip": "Select the operator for evaluating multiple badges. Options are: \"OR\" or \"AND\".\nOR",
-          "required": false,
-          "editable": true,
-          "visible": true,
-          "options": [
-            "OR",
-            "AND"
-          ]
         }
       ],
       "enabled": true,
@@ -368,9 +368,9 @@
     },
     {
       "operation": "get_list_resource_tags",
-      "title": "Get List Resource Tags",
+      "title": "Get Resource Tags List",
       "category": "investigation",
-      "annotation": "get_list_resource_tags",
+      "annotation": "get_resource_tags_list",
       "description": "Retrieves list of tags for a given id of the resource.",
       "parameters": [
         {

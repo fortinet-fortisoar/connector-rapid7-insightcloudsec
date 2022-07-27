@@ -114,7 +114,7 @@
         {
           "@type": "Workflow",
           "triggerLimit": null,
-          "name": "Get List Resource Tags",
+          "name": "Get Resource Tags List",
           "aliasName": null,
           "tag": "#Rapid7 InsightCloudSec",
           "description": "Retrieves list of tags for a given id of the resource.",
@@ -131,7 +131,7 @@
           "steps": [
             {
               "@type": "WorkflowStep",
-              "name": "Get List Resource Tags",
+              "name": "Get Resource Tags List",
               "description": null,
               "arguments": {
                 "name": "Rapid7 InsightCloudSec",
@@ -142,7 +142,7 @@
                 "version": "1.0.0",
                 "connector": "rapid7-insightcloudsec",
                 "operation": "get_list_resource_tags",
-                "operationTitle": "Get List Resource Tags",
+                "operationTitle": "Get Resource Tags List",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -160,7 +160,7 @@
               "description": null,
               "arguments": {
                 "route": "f12c1182-50b8-4a07-840e-c80948786246",
-                "title": "Rapid7 InsightCloudSec: Get List Resource Tags",
+                "title": "Rapid7 InsightCloudSec: Get Resource Tags List",
                 "resources": [
                   "alerts"
                 ],
@@ -185,7 +185,7 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "name": "Start-> Get List Resource Tags",
+              "name": "Start-> Get Resource Tags List",
               "targetStep": "/api/3/workflow_steps/106061c0-2f49-4189-889e-5845d8d24c8f",
               "sourceStep": "/api/3/workflow_steps/65460cbd-b8fd-47da-8566-5e5de2075342",
               "label": null,
